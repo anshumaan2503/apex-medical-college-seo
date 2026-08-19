@@ -1,5 +1,3 @@
-"use client";
-
 import { GraduationCap, ChevronRight, ArrowRight } from "lucide-react";
 
 const ADMISSION_DETAILS = [
@@ -9,13 +7,6 @@ const ADMISSION_DETAILS = [
 ];
 
 export default function AdmissionsSection() {
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="admissions" className="admissions-section">
       <div className="container">
@@ -29,8 +20,8 @@ export default function AdmissionsSection() {
               marginBottom: "32px",
             }}
           >
-            <GraduationCap size={14} color="#FFFFFF" />
-            Admissions Open — 2025–26 Academic Year
+            <GraduationCap size={14} color="#FFFFFF" aria-hidden="true" />
+            <span>Admissions Open — 2025–26 Academic Year</span>
           </div>
 
           <h2 className="admissions-heading">
@@ -44,14 +35,14 @@ export default function AdmissionsSection() {
           </p>
 
           <div className="admissions-actions">
-            <button onClick={scrollToContact} className="btn-white">
+            <a href="#contact" className="btn-white">
               View Admission Process
-              <ChevronRight size={16} />
-            </button>
-            <button onClick={scrollToContact} className="btn-dark-navy">
+              <ChevronRight size={16} aria-hidden="true" />
+            </a>
+            <a href="#contact" className="btn-dark-navy">
               Apply Now
-              <ArrowRight size={16} />
-            </button>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
           </div>
 
           <div className="admissions-details-grid">

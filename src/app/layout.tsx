@@ -70,6 +70,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <StructuredData />
         {children}
       </body>

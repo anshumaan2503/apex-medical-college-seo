@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CAMPUS_STATS = [
   { value: "45", label: "Acre Campus" },
   { value: "12", label: "Research Centers" },
@@ -62,7 +64,15 @@ export default function CampusSection() {
           <div className="campus-image-gallery">
             {CAMPUS_IMAGES.map((img) => (
               <div key={img.label} className="campus-img-item">
-                <img src={img.url} alt={img.alt} className="campus-img" />
+                <Image
+                  src={img.url}
+                  alt={img.alt}
+                  width={600}
+                  height={600}
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                  className="campus-img"
+                />
                 <div className="campus-img-overlay" />
                 <div className="campus-img-label">{img.label}</div>
               </div>

@@ -20,57 +20,50 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 24);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollTo = (href: string) => {
-    setMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <nav className="container navbar-inner" aria-label="Main Navigation">
         {/* Brand Logo */}
-        <button
-          onClick={() => scrollTo("#home")}
+        <a
+          href="#home"
           className="brand-logo-btn"
           aria-label="Apex Medical College Home"
+          onClick={() => setMenuOpen(false)}
         >
           <div className="brand-icon-wrapper">
-            <GraduationCap className="brand-icon" />
+            <GraduationCap className="brand-icon" aria-hidden="true" />
           </div>
           <div>
             <span className="brand-name">Apex Medical College</span>
             <span className="brand-tagline">Est. 1999 · Mumbai</span>
           </div>
-        </button>
+        </a>
 
         {/* Desktop Navigation Links */}
         <div className="nav-links-desktop">
           {NAV_LINKS.map((link) => (
-            <button
+            <a
               key={link.label}
-              onClick={() => scrollTo(link.href)}
+              href={link.href}
               className="nav-link"
             >
               {link.label}
-            </button>
+            </a>
           ))}
         </div>
 
         {/* Desktop CTA */}
         <div className="nav-cta-desktop">
-          <button
-            onClick={() => scrollTo("#admissions")}
+          <a
+            href="#admissions"
             className="btn-navy"
           >
             Apply Now
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle Button */}
@@ -80,29 +73,31 @@ export default function Navbar() {
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
         >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
         </button>
       </nav>
 
       {/* Mobile Drawer Menu */}
       <div className={`mobile-menu-drawer ${menuOpen ? "open" : ""}`}>
         {NAV_LINKS.map((link) => (
-          <button
+          <a
             key={link.label}
-            onClick={() => scrollTo(link.href)}
+            href={link.href}
+            onClick={() => setMenuOpen(false)}
             className="mobile-nav-item"
           >
             {link.label}
-          </button>
+          </a>
         ))}
         <div style={{ paddingTop: "12px" }}>
-          <button
-            onClick={() => scrollTo("#admissions")}
+          <a
+            href="#admissions"
+            onClick={() => setMenuOpen(false)}
             className="btn-navy"
             style={{ width: "100%", justifyContent: "center" }}
           >
             Apply Now
-          </button>
+          </a>
         </div>
       </div>
     </header>

@@ -1,16 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import { Star, ArrowRight, Award } from "lucide-react";
 
 export default function HeroSection() {
-  const scrollTo = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="home" className="hero-section">
       <div className="container">
@@ -18,8 +9,8 @@ export default function HeroSection() {
           {/* Left Text Content */}
           <div>
             <div className="section-tag section-tag-pill">
-              <Star size={12} fill="#0B9B8B" />
-              NMC Accredited &nbsp;·&nbsp; WHO Listed Institution
+              <Star size={12} fill="#087B6F" color="#087B6F" aria-hidden="true" />
+              <span>NMC Accredited &nbsp;·&nbsp; WHO Listed Institution</span>
             </div>
 
             <h1 className="hero-title">
@@ -37,19 +28,13 @@ export default function HeroSection() {
             </p>
 
             <div className="hero-actions">
-              <button
-                onClick={() => scrollTo("#courses")}
-                className="btn-primary"
-              >
+              <a href="#courses" className="btn-primary">
                 Explore Courses
-                <ArrowRight size={16} />
-              </button>
-              <button
-                onClick={() => scrollTo("#admissions")}
-                className="btn-secondary-outline"
-              >
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+              <a href="#admissions" className="btn-secondary-outline">
                 Apply for Admission
-              </button>
+              </a>
             </div>
 
             {/* Trust Indicators */}
@@ -81,13 +66,14 @@ export default function HeroSection() {
                 width={800}
                 height={600}
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="hero-image"
               />
 
               {/* Floating Credential Card */}
               <div className="floating-rank-card">
                 <div className="rank-badge-icon">
-                  <Award size={24} color="#0B9B8B" />
+                  <Award size={24} color="#0B9B8B" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="rank-text-title">
@@ -97,9 +83,9 @@ export default function HeroSection() {
                     National Healthcare Education Rankings 2024
                   </div>
                 </div>
-                <div className="stars-flex">
+                <div className="stars-flex" aria-label="5 out of 5 stars rating">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={14} fill="#F59E0B" color="#F59E0B" />
+                    <Star key={i} size={14} fill="#F59E0B" color="#F59E0B" aria-hidden="true" />
                   ))}
                 </div>
               </div>

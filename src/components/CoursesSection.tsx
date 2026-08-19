@@ -1,5 +1,3 @@
-"use client";
-
 import { Stethoscope, Heart, Microscope, Clock, ArrowRight } from "lucide-react";
 
 const COURSES = [
@@ -33,13 +31,6 @@ const COURSES = [
 ];
 
 export default function CoursesSection() {
-  const scrollTo = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="courses" className="section-padding courses-section">
       <div className="container">
@@ -57,7 +48,7 @@ export default function CoursesSection() {
             return (
               <article key={course.title} className="course-card">
                 <div className={`course-icon-wrapper ${course.accentStyle}`}>
-                  <Icon className="course-icon" />
+                  <Icon className="course-icon" aria-hidden="true" />
                 </div>
 
                 <h3 className="course-title">{course.title}</h3>
@@ -66,16 +57,13 @@ export default function CoursesSection() {
 
                 <div className="course-footer">
                   <div className="course-duration">
-                    <Clock size={14} color="#0B9B8B" />
+                    <Clock size={14} color="#087B6F" aria-hidden="true" />
                     <span className="course-duration-value">{course.duration}</span>
                   </div>
-                  <button
-                    onClick={() => scrollTo("#admissions")}
-                    className="course-learn-more"
-                  >
+                  <a href="#admissions" className="course-learn-more">
                     Learn More
-                    <ArrowRight size={14} />
-                  </button>
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </a>
                 </div>
               </article>
             );

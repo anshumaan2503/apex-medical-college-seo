@@ -36,7 +36,7 @@ export default function WhyChooseSection() {
           <h2 className="section-heading-large text-white">
             Why Choose Apex Medical College
           </h2>
-          <p className="section-subtitle section-subtitle-center" style={{ color: "#94A3B8" }}>
+          <p className="section-subtitle section-subtitle-center" style={{ color: "#CBD5E1" }}>
             We combine academic tradition with forward-thinking clinical practice to produce healthcare professionals the world needs most.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function WhyChooseSection() {
             return (
               <div key={feature.title} className="why-card">
                 <div className="why-icon-box">
-                  <Icon size={24} color="#0B9B8B" />
+                  <Icon size={24} color="#0B9B8B" aria-hidden="true" />
                 </div>
                 <h3 className="why-title">{feature.title}</h3>
                 <p className="why-description">{feature.description}</p>

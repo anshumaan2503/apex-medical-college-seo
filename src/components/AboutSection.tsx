@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { ChevronRight, ArrowRight } from "lucide-react";
 
@@ -11,13 +9,6 @@ const ABOUT_HIGHLIGHTS = [
 ];
 
 export default function AboutSection() {
-  const scrollTo = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="about" className="section-padding about-section">
       <div className="container">
@@ -30,6 +21,8 @@ export default function AboutSection() {
                 alt="Apex Medical College students in seminar discussion"
                 width={800}
                 height={600}
+                loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="about-image"
               />
             </div>
@@ -60,17 +53,17 @@ export default function AboutSection() {
               {ABOUT_HIGHLIGHTS.map((item) => (
                 <li key={item} className="about-check-item">
                   <span className="check-icon-box">
-                    <ChevronRight size={12} color="#0B9B8B" />
+                    <ChevronRight size={12} color="#087B6F" aria-hidden="true" />
                   </span>
                   <span className="check-text">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <button onClick={() => scrollTo("#courses")} className="about-link-btn">
+            <a href="#courses" className="about-link-btn">
               View all programs
-              <ArrowRight size={16} />
-            </button>
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
           </div>
         </div>
       </div>
