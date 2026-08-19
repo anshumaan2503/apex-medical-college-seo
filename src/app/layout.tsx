@@ -32,17 +32,17 @@ export const metadata: Metadata = {
 
   authors: [{ name: "Apex Medical College" }],
 
-  metadataBase: new URL("https://apexmedicalcollege.edu.in"),
+  metadataBase: new URL("https://apex-medical-college-seo.onrender.com"),
 
   alternates: {
-    canonical: "https://apexmedicalcollege.edu.in",
+    canonical: "https://apex-medical-college-seo.onrender.com",
   },
 
   openGraph: {
     title: "Apex Medical College | Shaping Tomorrow's Healthcare Leaders",
     description:
       "NMC Accredited & WHO Listed Institution. Offering top-tier medical education, state-of-the-art simulation labs, and hands-on hospital exposure.",
-    url: "https://apexmedicalcollege.edu.in",
+    url: "https://apex-medical-college-seo.onrender.com",
     siteName: "Apex Medical College",
     locale: "en_US",
     type: "website",

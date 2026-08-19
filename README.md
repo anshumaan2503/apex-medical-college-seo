@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Apex Medical College – Next.js SEO Implementation
 
-## Getting Started
+A single-page medical college website built with **Next.js** and optimized to demonstrate practical **Search Engine Optimization (SEO)** techniques.
 
-First, run the development server:
+This project was created as a hands-on SEO implementation exercise covering technical SEO, metadata optimization, structured data, crawlability, indexability, image optimization, and performance.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Live Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔗 **Live Website:** Add deployed URL here
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 16
+- TypeScript
+- React
+- Plain CSS
+- Next.js App Router
+- next/font
+- next/image
+- Lucide React
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Project Objective
 
-## Deploy on Vercel
+The goal of this project is to build a simple static website and implement important SEO practices in a real Next.js application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project focuses on practical implementation rather than only theoretical SEO concepts.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔍 SEO Implementations
+
+### 1. Metadata Optimization
+
+The website includes:
+
+- SEO-friendly page title
+- Meta description
+- Open Graph metadata
+- Twitter Card metadata
+- Theme color
+- Language declaration
+
+Example:
+
+```ts
+export const metadata = {
+  title: "Apex Medical College | Premier Healthcare & Clinical Education",
+  description:
+    "Apex Medical College provides medical education, clinical training, and undergraduate and postgraduate medical programs.",
+};

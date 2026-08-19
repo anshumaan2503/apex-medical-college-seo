@@ -5,7 +5,7 @@ export default function StructuredData() {
     name: "Apex Medical College",
     description:
       "A medical college offering MBBS, BDS, and postgraduate medical education with clinical training.",
-    url: "https://apexmedicalcollege.edu.in",
+    url: "https://apex-medical-college-seo.onrender.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Mumbai",
