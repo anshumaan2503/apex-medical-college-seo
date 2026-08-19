@@ -11,10 +11,12 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    upgrade-insecure-requests;
 `.replace(/\s{2,}/g, " ").trim();
 
 const nextConfig: NextConfig = {
+  images: {
+    unoptimized: true,
+  },
   async headers() {
     return [
       {
