@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GraduationCap, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
@@ -13,19 +13,10 @@ const NAV_LINKS = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 24);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <header className="navbar">
       <nav className="container navbar-inner" aria-label="Main Navigation">
         {/* Brand Logo */}
         <a
