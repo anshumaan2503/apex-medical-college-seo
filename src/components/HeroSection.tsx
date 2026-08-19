@@ -83,7 +83,7 @@ export default function HeroSection() {
                     National Healthcare Education Rankings 2024
                   </div>
                 </div>
-                <div className="stars-flex" aria-label="5 out of 5 stars rating">
+                <div className="stars-flex" role="img" aria-label="5 out of 5 stars rating">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <Star key={i} size={14} fill="#F59E0B" color="#F59E0B" aria-hidden="true" />
                   ))}
